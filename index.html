@@ -1,98 +1,665 @@
+
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Damiano Bottali CV</title>
+  <meta name="description" content="Damiano Bottali — Data Security Lead and Cybersecurity Instructor based in Berlin.">
+  <title>Damiano Bottali | Curriculum Vitae</title>
+
   <style>
+    :root {
+      --primary: #172b40;
+      --accent: #007acc;
+      --text: #333;
+      --muted: #687786;
+      --border: #e2e7ec;
+      --background: #f4f6f8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 40px;
-      line-height: 1.6;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      background: white;
-      border-radius: 8px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.55;
+      margin: 0;
+      padding: 40px 20px;
     }
+
+    .cv {
+      max-width: 850px;
+      margin: auto;
+      background: #fff;
+      padding: 48px 55px;
+      box-shadow: 0 4px 25px rgba(0,0,0,.07);
+      border-radius: 6px;
+    }
+
+    /* HEADER */
+
+    header {
+      margin-bottom: 32px;
+    }
+
     h1 {
-      font-size: 2em;
-      margin-bottom: 0.2em;
+      color: var(--primary);
+      font-size: 34px;
+      letter-spacing: -.8px;
+      margin: 0;
     }
-    h2 {
-      margin-top: 2em;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 4px;
-      color: #444;
+
+    .subtitle {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 17px;
+      margin: 4px 0 14px;
     }
-    p, li {
-      font-size: 1em;
+
+    .contact {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 18px;
     }
-    ul {
-      padding-left: 1.2em;
-    }
+
     a {
-      color: #007acc;
+      color: var(--accent);
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
-    .section {
-      margin-bottom: 2em;
+
+    /* SECTIONS */
+
+    section {
+      margin-top: 29px;
+    }
+
+    h2 {
+      color: var(--primary);
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 7px;
+      margin: 0 0 17px;
+    }
+
+    .summary {
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill {
+      background: #eef3f7;
+      color: #29465f;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+
+    /* EXPERIENCE */
+
+    .job {
+      margin-bottom: 21px;
+      break-inside: avoid;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+    }
+
+    .job-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .company {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .date {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .job p {
+      margin: 6px 0 0;
+      font-size: 13px;
+    }
+
+    .job ul {
+      margin: 7px 0 0;
+      padding-left: 19px;
+      font-size: 13px;
+    }
+
+    .job li {
+      margin-bottom: 4px;
+    }
+
+    /* EARLIER CAREER */
+
+    .compact-job {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 9px 0;
+      border-bottom: 1px solid #f0f1f3;
+      break-inside: avoid;
+    }
+
+    .compact-job:last-child {
+      border-bottom: none;
+    }
+
+    .compact-title {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 13px;
+    }
+
+    .compact-company {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* CERTIFICATIONS */
+
+    .certifications {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      font-size: 13px;
+    }
+
+    .certifications div {
+      break-inside: avoid;
+    }
+
+    .certifications span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .achievement {
+      margin-top: 17px;
+      font-size: 13px;
+    }
+
+    /* PERSONAL PROJECTS */
+
+    .project {
+      break-inside: avoid;
+    }
+
+    .project-title {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .project-meta {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .project p {
+      font-size: 13px;
+      margin: 7px 0;
+    }
+
+    /* LANGUAGES */
+
+    .languages {
+      font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 25px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+      body {
+        padding: 0;
+      }
+
+      .cv {
+        padding: 28px 23px;
+        border-radius: 0;
+      }
+
+      h1 {
+        font-size: 29px;
+      }
+
+      .job-header {
+        flex-direction: column;
+        gap: 1px;
+      }
+
+      .certifications {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* PRINT / PDF */
+
+    @page {
+      size: A4;
+      margin: 15mm;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+
+      .cv {
+        padding: 0;
+        max-width: none;
+        box-shadow: none;
+      }
+
+      section {
+        margin-top: 22px;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .job, .project, .compact-job {
+        break-inside: avoid;
+      }
+
+      h2 {
+        break-after: avoid;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Damiano Bottali | Data Security Lead | Cybersecurity Instructor | Founder @ Bushido Ops</h1>
-  <p><strong>damiano.bottali@gmail.com</strong> </p>
-  <p><strong>Data Security / Linux / Networking / Cybersecurity</strong> </p>
-  <a href="https://github.com/dbottali/" target="_blank">github.com/dbottali/</a></p>
-  <a href="https://www.bushido-ops.com" target="_blank">bushido-ops.com</a></p>
+<main class="cv">
 
-  <div class="section">
-    <h2>Certifications</h2>
-    <ul>
-      <a href="https://www.credly.com/badges/c83dd338-4e30-40eb-b6ce-87924b945fc5/public_url" target="_black"><li>Cisco Ethical Hacker (2026)</li></a>
-      <a href="https://www.credly.com/badges/1e1120ce-471f-44a3-b81a-0e1212e8cd5a/public_url" target="_black"><li>CompTIA Security+ (2025)</li></a>
-      <li>Cybersecurity @ Ironhack (2024)</li>
-      <li>Google Cybersecurity (2024)</li>
-      <li>Electrical Engineering (2021)</li>
-      <li>Cisco CCNA (2016)</li>
-    </ul>
-  </div>
+  <!-- HEADER -->
 
-  <div class="section">
-    <h2>Experience</h2>
+  <header>
+    <h1>Damiano Bottali</h1>
 
-    <p><a href="https://recircletech.com" target="_blank"><strong>ReCircle Tech GmbH</strong></a> – Data Security Lead<br><em>Berlin, 2025 – Present</em><br>Lead ITAD and Data Security operations, designing technical workflows, systems architecture, automation and operational processes.</p>
-    <p><a href="https://unihackers.com" target="_blank"><strong>Unihackers</strong></a> – Cybersecurity Instructor<br><em>Berlin, 2025 – Present</em><br>Teach hands-on cybersecurity courses focused on security fundamentals, networking, threat analysis, and practical labs.</p>
-    <p><a href="https://bushidoops.com" target="_blank"><strong>Bushido OPS</strong></a> – Founder & Product Lead<br><em>Berlin, 2026 – Present</em><br>Building a gamified, hands-on cybersecurity learning platform.</p>
-    <p><strong>Property Manager & Owner – Airbnb Rentals</strong><br><em>Rome, 2017 – Present</em><br>Personal venture as an Airbnb Superhost and property manager.</p>
-    <p><strong>ATC - Computer Transport & Logistic</strong> – Data Center Technician<br><em>Berlin, 2024 – 2025</em><br></p>
-    <p><strong>Volkswagen</strong> – Network Engineer<br><em>Berlin, 2021 – 2023</em><br></p>
-    <p><strong>Colt</strong> – Network Technician<br><em>Berlin, 2019 – 2021</em><br></p>
-    <p><strong>ENI</strong> – Mobile Security Specialist<br><em>Rome, 2008 – 2016</em><br></p>
-    <p><strong>Vodafone</strong> – Customer Care<br><em>Rome, 2006 – 2007</em><br></p>
-  </div>
+    <div class="subtitle">
+      Data Security Lead | Cybersecurity Instructor
+    </div>
 
-  <div class="section">
-    <h2>Projects</h2>
-    <p><strong>TryHackMe.com</strong> – Top 1% | Cybersecurity Lab & Room Development<br>
-    <em>2025 – Present</em><br>
-    <a href="https://tryhackme.com/p/nagash86" target="_blank">https://tryhackme.com/p/nagash86</a></p>
-  </div>
+    <div class="contact">
+      <span>Berlin, Germany</span>
 
-    <div class="section">
+      <a href="mailto:damiano.bottali@gmail.com">
+        damiano.bottali@gmail.com
+      </a>
+
+      <a href="https://github.com/dbottali">
+        github.com/dbottali
+      </a>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL PROFILE -->
+
+  <section>
+    <h2>Professional Profile</h2>
+
+    <p class="summary">
+      IT professional with a career spanning 20 years
+      across telecommunications, network infrastructure,
+      data center operations and cybersecurity.
+      Currently specializing in data security operations,
+      IT asset disposition, workflow automation and
+      technical education. Combining hands-on infrastructure
+      experience with security expertise and a strong
+      interest in developing practical technical solutions.
+    </p>
+  </section>
+
+  <!-- CORE COMPETENCIES -->
+
+  <section>
+    <h2>Core Competencies</h2>
+
+    <div class="skills">
+      <span class="skill">Data Security &amp; ITAD</span>
+      <span class="skill">Cybersecurity</span>
+      <span class="skill">Linux</span>
+      <span class="skill">Networking</span>
+      <span class="skill">Data Center Operations</span>
+      <span class="skill">Workflow Automation</span>
+      <span class="skill">Technical Training</span>
+      <span class="skill">Security Labs</span>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL EXPERIENCE -->
+
+  <section>
+    <h2>Professional Experience</h2>
+
+    <!-- RECIRCLE -->
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">
+            Data Security Lead
+          </div>
+
+          <div class="company">
+            <a href="https://recircletech.com">
+              ReCircle Tech GmbH
+            </a> · Berlin
+          </div>
+        </div>
+
+        <div class="date">2025 – Present</div>
+      </div>
+
+      <ul>
+        <li>
+          Lead ITAD and data security operations,
+          coordinating secure data erasure,
+          verification and audit processes.
+        </li>
+
+        <li>
+          Design and improve technical workflows,
+          operational procedures and automation.
+        </li>
+
+        <li>
+          Support infrastructure operations,
+          troubleshooting and process optimization.
+        </li>
+      </ul>
+    </div>
+
+    <!-- UNIHACKERS -->
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">
+            Cybersecurity Instructor
+          </div>
+
+          <div class="company">
+            <a href="https://unihackers.com">
+              Unihackers
+            </a> · Berlin
+          </div>
+        </div>
+
+        <div class="date">2025 – 2026</div>
+      </div>
+
+      <ul>
+        <li>
+          Deliver hands-on cybersecurity training
+          covering security fundamentals, networking,
+          threat analysis and practical labs.
+        </li>
+
+        <li>
+          Guide students through technical exercises,
+          security tools and real-world scenarios.
+        </li>
+      </ul>
+    </div>
+
+    <!-- ATC -->
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">
+            Data Center Technician
+          </div>
+
+          <div class="company">
+            ATC – Computer Transport &amp; Logistic · Berlin
+          </div>
+        </div>
+
+        <div class="date">2024 – 2025</div>
+      </div>
+
+      <p>
+        Data center infrastructure operations,
+        equipment handling and technical support.
+      </p>
+    </div>
+
+    <!-- VOLKSWAGEN -->
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">
+            Network Engineer
+          </div>
+
+          <div class="company">
+            Volkswagen · Berlin
+          </div>
+        </div>
+
+        <div class="date">2021 – 2023</div>
+      </div>
+
+      <p>
+        Enterprise networking, infrastructure operations
+        and technical troubleshooting.
+      </p>
+    </div>
+  </section>
+
+  <!-- EARLIER CAREER -->
+
+  <section>
+    <h2>Earlier Career</h2>
+
+    <div class="compact-job">
+      <div>
+        <div class="compact-title">
+          Network Technician
+        </div>
+
+        <div class="compact-company">
+          Colt · Berlin
+        </div>
+      </div>
+
+      <div class="date">2019 – 2021</div>
+    </div>
+
+    <div class="compact-job">
+      <div>
+        <div class="compact-title">
+          Mobile Security Specialist
+        </div>
+
+        <div class="compact-company">
+          ENI · Rome
+        </div>
+      </div>
+
+      <div class="date">2008 – 2016</div>
+    </div>
+
+    <div class="compact-job">
+      <div>
+        <div class="compact-title">
+          Customer Care
+        </div>
+
+        <div class="compact-company">
+          Vodafone · Rome
+        </div>
+      </div>
+
+      <div class="date">2006 – 2007</div>
+    </div>
+  </section>
+
+  <!-- INDEPENDENT EXPERIENCE -->
+
+  <section>
+    <h2>Independent Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">
+            Property Manager &amp; Owner
+          </div>
+
+          <div class="company">
+            Airbnb Rentals · Rome
+          </div>
+        </div>
+
+        <div class="date">2017 – Present</div>
+      </div>
+
+      <p>
+        Independently manage a short-term rental
+        property, including guest operations,
+        property coordination and administrative
+        processes. Airbnb Superhost.
+      </p>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+
+  <section>
+    <h2>Certifications &amp; Education</h2>
+
+    <div class="certifications">
+
+      <div>
+        <a href="https://www.credly.com/badges/c83dd338-4e30-40eb-b6ce-87924b945fc5/public_url">
+          Cisco Ethical Hacker
+        </a>
+        <span> · 2026</span>
+      </div>
+
+      <div>
+        <a href="https://www.credly.com/badges/1e1120ce-471f-44a3-b81a-0e1212e8cd5a/public_url">
+          CompTIA Security+
+        </a>
+        <span> · 2025</span>
+      </div>
+
+      <div>
+        Cybersecurity – Ironhack
+        <span> · 2024</span>
+      </div>
+
+      <div>
+        Google Cybersecurity
+        <span> · 2024</span>
+      </div>
+
+      <div>
+        Electrical Engineering
+        <span> · 2021</span>
+      </div>
+
+      <div>
+        Cisco CCNA
+        <span> · 2016</span>
+      </div>
+
+    </div>
+
+    <div class="achievement">
+      <strong>Cybersecurity Achievement:</strong>
+
+      <a href="https://tryhackme.com/p/nagash86">
+        TryHackMe – Top 1% Global Ranking
+      </a>
+    </div>
+  </section>
+
+  <!-- PERSONAL PROJECTS -->
+
+  <section>
+    <h2>Personal Projects</h2>
+
+    <div class="project">
+
+      <div class="project-title">
+        <a href="https://bushido-ops.com">
+          Bushido OPS
+        </a>
+      </div>
+
+      <div class="project-meta">
+        Independent Cybersecurity Learning Project
+        · 2026 – Present
+      </div>
+
+      <p>
+        Personal project in active development,
+        exploring gamified cybersecurity education
+        through interactive missions, practical labs
+        and progressive learning paths.
+      </p>
+
+      <p>
+        <a href="https://bushido-ops.com">
+          bushido-ops.com
+        </a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- LANGUAGES -->
+
+  <section>
     <h2>Languages</h2>
-    <ul>
-      <li>English – C1</li>
-      <li>German – B2</li>
-      <li>Italian – Native</li>
-    </ul>
-  </div>
-  
+
+    <div class="languages">
+      <span><strong>Italian</strong> – Native</span>
+      <span><strong>English</strong> – C1</span>
+      <span><strong>German</strong> – B2</span>
+    </div>
+  </section>
+
+</main>
 </body>
 </html>
